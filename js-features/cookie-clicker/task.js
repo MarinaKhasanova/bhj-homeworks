@@ -5,8 +5,5 @@ const cookie = document.getElementById("cookie");
 cookie.onclick =function() {
   count ++;
   counterClick.textContent = count;
-  if (count % 2) {
-    cookie.width = 100;
-  } else { 
-      cookie.width = 200;}
+  cookie.width = count % 2 ? 250 : 200;
 }
