@@ -1,6 +1,6 @@
 const timerStart = document.getElementById('timer');
 
-let t = setInterval (function () {
+const massage = setInterval (function () {
   timerStart.textContent--; 
   if (timerStart.textContent == 0) { 
     alert('Вы победили в конкурсе!');
