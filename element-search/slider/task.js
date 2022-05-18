@@ -4,38 +4,37 @@ const slider = document.querySelectorAll(".slider__item");
 const dot = document.querySelectorAll(".slider__dot");
 let i = 0; 
 
-const activeSlide = n => {
+let activeSlide = n => {
   for (slide of slider) {
 	slide.classList.remove("slider__item_active");
   }
   slider[n].classList.add("slider__item_active");
 }
 
-const getCurrentSlide = function (idx) {
+let getCurrentSlide = function (idx) {
   activeSlide(idx);
   dotActive(idx);
 }
 
-const nextSlide = function () {
+let nextSlide = function () {
   if (i === slider.length - 1) {
     i = 0;
-	getCurrentSlide(i);
+    getCurrentSlide(i);
   } else {
       i++;
-	  getCurrentSlide(i);
+      getCurrentSlide(i);
 	}
 }
 
-const prevSlide = function () {
+let prevSlide = function () {
   if (i === 0) {
     i = slider.length - 1;
-	getCurrentSlide(i);
+    getCurrentSlide(i);
   } else {
       i--;
-	  getCurrentSlide(i);
+      getCurrentSlide(i);
 	}
 }
-
 
 ridht.onclick = function () {
   nextSlide();
