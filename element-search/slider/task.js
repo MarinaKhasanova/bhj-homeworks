@@ -1,47 +1,22 @@
 const prev = document.querySelector(".slider__arrow_prev");
 const ridht = document.querySelector(".slider__arrow_next");
-const slider = document.querySelectorAll(".slider__item");
-const dot = document.querySelectorAll(".slider__dot");
-let i = 0; 
+const slider = [...document.querySelectorAll(".slider__item")];
 
-let activeSlide = n => {
-  for (slide of slider) {
-	slide.classList.remove("slider__item_active");
-  }
-  slider[n].classList.add("slider__item_active");
-}
-
-let getCurrentSlide = function (idx) {
-  activeSlide(idx);
-  dotActive(idx);
-}
 
 let nextSlide = function () {
-  if (i === slider.length - 1) {
-    i = 0;
-    getCurrentSlide(i);
-  } else {
-      i++;
-      getCurrentSlide(i);
-	}
+  let indexActiveSlide = slider.findIndex(element => element.classList.contains('slider__item_active'));
+  slider[indexActiveSlide].classList.remove('slider__item_active');
+  indexActiveSlide = slider.length - 1 === indexActiveSlide ? 0 : indexActiveSlide + 1;
+  slider[indexActiveSlide].classList.add('slider__item_active');
 }
 
 let prevSlide = function () {
-  if (i === 0) {
-    i = slider.length - 1;
-    getCurrentSlide(i);
-  } else {
-      i--;
-      getCurrentSlide(i);
-	}
+  let indexActiveSlide = slider.findIndex(element => element.classList.contains('slider__item_active'));
+  slider[indexActiveSlide].classList.remove('slider__item_active');
+  indexActiveSlide = 0 === indexActiveSlide ? slider.length - 1 : indexActiveSlide - 1;
+  slider[indexActiveSlide].classList.add('slider__item_active');
 }
 
-ridht.onclick = function () {
-  nextSlide();
-  return false;
-}
+ridht.onclick = nextSlide;
 
-prev.onclick = function () {
-  prevSlide();
-  return false;
-}
+prev.onclick = prevSlide;
