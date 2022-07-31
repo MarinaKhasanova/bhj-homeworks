@@ -9,14 +9,14 @@ for (let sizeElement of sizeElements) {
     activElement = document.querySelector('.font-size_active');
     
     if (sizeElement.getAttribute('data-size') === 'small') {
-    book.classList.remove('font-size_big');
-    book.classList.add('font-size_small');
-    }  else if (sizeElement.getAttribute('data-size') === 'big') {
-    book.classList.remove('font-size_small');
-    book.classList.add('font-size_big');
+      book.classList.remove('font-size_big');
+      book.classList.add('font-size_small');
+    } else if (sizeElement.getAttribute('data-size') === 'big') {
+        book.classList.remove('font-size_small');
+        book.classList.add('font-size_big');
     } else {
-    book.classList.remove('font-size_small');
-    book.classList.remove('font-size_big');
+        book.classList.remove('font-size_small');
+        book.classList.remove('font-size_big');
     }
 
     return false;
