@@ -11,6 +11,8 @@ button.onclick = () => {
     divTasksTitle.classList.add('task__title');
     divTasksTitle.textContent = taskInputArea.value;
     divTask.appendChild(divTasksTitle);
+
+    taskInputArea.value = '';    
     const taskRemove = document.createElement('a');
     taskRemove.href = '#';
     taskRemove.classList.add('task__remove');
