@@ -22,11 +22,7 @@ for(let product of products) {
   
   buttonAddProduct.onclick = () => {
     const cartProducts = cart.querySelectorAll('.cart__product');
-    let  cartProduct= Array.from(cartProducts).find((elem) => {
-      if (elem.getAttribute('data-id') === productId) {
-        return elem;
-      }
-    })
+    let  cartProduct= Array.from(cartProducts).find((elem) => (elem.getAttribute('data-id') === productId))
     
     if (cartProduct) {
       cartProduct.querySelector('.cart__product-count').textContent = String(Number(cartProduct.querySelector('.cart__product-count').textContent) + Number(productQuantityControls.textContent));
