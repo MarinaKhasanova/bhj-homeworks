@@ -31,12 +31,10 @@ for(let product of products) {
         divCartProduct.classList.add('cart__product');
         divCartProduct.setAttribute('data-id', productId);
         cart.appendChild(divCartProduct);
-        
         const cartProductImg = document.createElement('img');
         cartProductImg.classList.add('cart__product-image');
         cartProductImg.setAttribute('src', productImage.getAttribute('src'));
         divCartProduct.appendChild(cartProductImg);
-
         const cartProductCount = document.createElement('div');
         cartProductCount.classList.add('cart__product-count');
         cartProductCount.textContent = productQuantityControls.textContent;
